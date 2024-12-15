@@ -9,5 +9,9 @@ Activate the virtual environment <myvenv>
 ```bash
 source myvenv/bin/activate
 ```
+Deactivate the virtual environment
+```
+deactivate
+```
 
 #### Understanding HTML Documents
