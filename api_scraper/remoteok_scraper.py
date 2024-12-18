@@ -8,5 +8,18 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.utils import COMMASPACE, formatdate
 
+BASE_URL = 'https://remoteok.com/api/'
+USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36'
+REQUEST_HEADER = {
+  'User-Agent': USER_AGENT,
+  'Accept-Language': 'en-US, en;q=0.5',
+}
+
+
+def get_job_postings():
+  res = requests.get(url=BASE_URL,headers = REQUEST_HEADER)
+  return res.json()
+
 if __name__ == "__main__":
-  print("Hello")
+  json = get_job_postings()[1] # Take first element, 0 is dummy
+  print(json)
