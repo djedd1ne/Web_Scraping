@@ -20,6 +20,14 @@ def get_job_postings():
   res = requests.get(url=BASE_URL,headers = REQUEST_HEADER)
   return res.json()
 
+def output_jobs_to_xls(data):
+  wb = Workbook()
+  job_sheet = wb.add_sheet('Jobs')
+  headers = list(data[0].keys())
+  print (headers)
+
+
 if __name__ == "__main__":
-  json = get_job_postings()[1] # Take first element, 0 is dummy
-  print(json)
+  json = get_job_postings()[1:] # Take first element, 0 is dummy
+#  print(json)
+  output_jobs_to_xls(json) # print headers
