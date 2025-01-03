@@ -15,4 +15,7 @@ deactivate
 ```
 
 #### Understanding HTML Documents
-HTML is 
+HTML is Hypertext Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser<br/>
+\<html\> tag represents the root of an HTML document.
+
+
